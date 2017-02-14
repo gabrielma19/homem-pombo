@@ -2,6 +2,8 @@ const express = require('express')
 
 const app = express()
 
-app.get('*', (request, response) => console.log('Bateram aqui'));
+const home = require('./routers/home.js')
 
-app.listen(9000, () => console.log('App is listening at http://localhost:8080...'));
+app.use('/home', home)
+
+app.listen(9000, () => console.log('App is listening at http://localhost:8080...'))
